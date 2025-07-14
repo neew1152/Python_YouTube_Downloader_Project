@@ -1,4 +1,3 @@
-````markdown
 # 🎥 Python YouTube Video Downloader Project
 
 A YouTube video downloader built with Python, using `customtkinter` for a modern GUI and `yt-dlp`/`pytube` for downloading video and audio content. This app allows users to:
