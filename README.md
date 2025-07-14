@@ -73,7 +73,7 @@ The project was inspired by several YouTube tutorials and resources, including:
 * https://www.youtube.com/watch?v=GeflXCubyrA
 * https://www.youtube.com/watch?v=QRroCuY1Bhc
 * https://www.youtube.com/watch?v=df30Qro3Iu4
-* ChatGPT 3.5 / GPT-4o
+* ChatGPT 3.5/GPT-4o
 * GitHub
 * Google
 
