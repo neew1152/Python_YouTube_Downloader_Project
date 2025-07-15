@@ -81,7 +81,7 @@ The project was inspired by several YouTube tutorials and resources, including:
 
 ## ⚠️ Disclaimer
 
-This tool is for educational purposes only.
+This project is for educational purposes only.
 
 ---
 ---
