@@ -28,7 +28,8 @@ pip install customtkinter
 pip install yt-dlp
 pip install pytube
 pip install tk
-````
+pip install pillow
+```` 
 
 ---
 
