@@ -171,7 +171,7 @@ python Python_YouTube_Downloader_Project.py
 
 ---
 
-Future Update:
+⏳ Future Update:
 - ffmpeg รวมเสียงกับวิดีโอทีเดียวเลย
 - เขียนใหม่ ลด process ที่ไม่จำเป็น
 
