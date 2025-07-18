@@ -1,6 +1,6 @@
 # 🎥 Python YouTube Video Downloader Project
 
-A YouTube video downloader built with Python, using `customtkinter` for a modern GUI and `yt-dlp`/`pytube`
+A YouTube video downloader built with Python, using `customtkinter` for a modern GUI and `yt-dlp`/`pytube`.
 
 แอปดาวน์โหลดวิดีโอบนยูทูบโดยใช้ `python`, `customtkinter` และ `yt-dlp`/`pytube`
 
