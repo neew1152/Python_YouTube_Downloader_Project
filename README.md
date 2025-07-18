@@ -1,6 +1,7 @@
 # 🎥 Python YouTube Video Downloader Project
 
 A YouTube video downloader built with Python, using `customtkinter` for a modern GUI and `yt-dlp`/`pytube`
+
 แอปดาวน์โหลดวิดีโอบนยูทูบโดยใช้ `python`, `customtkinter` และ `yt-dlp`/`pytube`
 
 ---
@@ -26,6 +27,7 @@ A YouTube video downloader built with Python, using `customtkinter` for a modern
 ## 🔧 Requirements - ความต้องการ
 
 Install the necessary dependencies using pip:
+
 ติดตั้ง dependencies ที่จำเป็นโดยใช้ pip :
 
 ```bash
@@ -75,6 +77,7 @@ python Python_YouTube_Downloader_Project.py
 ## 📁 Output Location - ตำแหน่งเอาต์พุต
 
 All downloaded files will be saved in the `Downloads/` directory (created automatically if it doesn't exist).
+
 ไฟล์ที่ดาวน์โหลดทั้งหมดจะถูกบันทึกไว้ในไดเรกทอรี `Downloads/` (สร้างขึ้นอัตโนมัติหากไม่มี)
 
 ---
@@ -82,6 +85,7 @@ All downloaded files will be saved in the `Downloads/` directory (created automa
 ## 📚 Credits & Resources - เครดิตและแหล่งข้อมูล
 
 The project was inspired by several YouTube tutorials and resources, including:
+
 โพรเจกต์นี้ได้รับแรงบันดาลใจจากวิดีโอสอนและแหล่งข้อมูลมากมายบน YouTube รวมถึง :
 
 * https://www.youtube.com/watch?v=NI9LXzo0UY0
@@ -101,6 +105,7 @@ The project was inspired by several YouTube tutorials and resources, including:
 ## ⚠️ Disclaimer - ข้อสงวนสิทธิ์
 
 This project is for educational purposes only.
+
 โพรเจกต์นี้มีวัตถุประสงค์เพื่อการศึกษาเท่านั้น
 
 ---
