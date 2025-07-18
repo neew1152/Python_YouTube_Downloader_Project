@@ -122,7 +122,7 @@ pip install pillow
 
 1. โคลนหรือดาวน์โหลด Repository นี้
 2. ติดตั้งแพ็กเกจที่จำเป็น
-3. เรียกใช้สคริปต์:
+3. เรียกใช้สคริปต์ :
 
 ```bash
 python Python_YouTube_Downloader_Project.py
