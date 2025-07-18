@@ -14,7 +14,8 @@ A YouTube video downloader built with Python, using `customtkinter` for a modern
 - ✅ Optional file renaming
 - ✅ Auto-scroll output (on/off toggle)
 - ✅ Light/Dark mode switch
---
+
+
 - ✅ อินเทอร์เฟซ `customtkinter`
 - ✅ รายการฟอร์แมตวิดีโอ / เสียง `yt-dlp`
 - ✅ การติดตามความคืบหน้าและเอาต์พุตเทอร์มินัล
