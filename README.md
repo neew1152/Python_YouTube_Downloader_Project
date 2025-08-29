@@ -62,7 +62,7 @@ All downloaded files will be saved in the `Downloads/` directory (created automa
 
 ---
 
-## 📚 Credits & Resources
+## 📚 Sources
 
 The project was inspired by several YouTube tutorials and resources, including:
 
@@ -147,7 +147,7 @@ python Python_YouTube_Downloader_Project.py
 
 ---
 
-## 📚 เครดิตและแหล่งข้อมูล
+## 📚 แหล่งข้อมูล
 
 โพรเจกต์นี้ได้รับแรงบันดาลใจจากวิดีโอสอนและแหล่งข้อมูลมากมายบน YouTube รวมถึง :
 
