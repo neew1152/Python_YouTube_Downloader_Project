@@ -24,11 +24,7 @@ A YouTube video downloader built with Python, using `customtkinter` for a modern
 Install the necessary dependencies using pip:
 
 ```bash
-pip install customtkinter
-pip install yt-dlp
-pip install pytube
-pip install tk
-pip install pillow
+pip install customtkinter yt-dlp pytube tk
 ```` 
 
 ---
