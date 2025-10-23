@@ -40,7 +40,6 @@ def run_search():
 
     # Clear the output monitor before running the command.
     monitor_frame.delete("1.0", tkinter.END)
-    monitor_frame.insert("1.0", f"Searching for formats in: {url}\n\n")
     app.update() # Update the screen to show the message
 
     # Run the command and show its output in real-time.
@@ -92,7 +91,6 @@ def download():
 
     # Clear the output monitor and run the download command.
     monitor_frame.delete("1.0", tkinter.END)
-    monitor_frame.insert("1.0", f"Starting download...\nCommand: {command}\n\n")
     app.update()
 
     # The logic to run the command is the same as in run_search().
