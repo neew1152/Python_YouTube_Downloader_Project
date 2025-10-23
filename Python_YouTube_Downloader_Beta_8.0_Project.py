@@ -1,11 +1,11 @@
-# Required install: pip install customtkinter yt-dlp tk
+# Required install: pip install customtkinter tk yt-dlp
 
 # --- 1. Import necessary libraries ---
 # We need these libraries to build the app, run commands, and work with files.
-import tkinter
-import subprocess
-import os
 import customtkinter
+import os
+import subprocess
+import tkinter
 
 # --- 2. Create the main application window ---
 app = customtkinter.CTk()
@@ -161,3 +161,4 @@ download_button.pack(padx=5, pady=5)
 app.mainloop()
 
 # The code is rewritten by Gemini 2.5 Pro
+
