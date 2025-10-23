@@ -17,7 +17,7 @@ from tkinter import ttk
 
 # Our app frame
 app = customtkinter.CTk()
-app.title("Python YouTube Video Downloader Beta 6.5 Portable Project")
+app.title("Python YouTube Video Downloader Beta 6.5 Project")
 
 # Get the default font of the operating system
 os_font = customtkinter.CTkFont()
@@ -276,4 +276,5 @@ app.mainloop()
 # https://youtu.be/QRroCuY1Bhc?si=ftS6KzHBPwhftw2k
 # https://youtu.be/df30Qro3Iu4?si=K6-nDCI5WJDS-0MR
 # Some videos have been deleted.
+
 # ChatGPT 3.5, ChatGPT-4o, GitHub and Google.
