@@ -14,8 +14,6 @@ A YouTube video downloader built with Python, using `customtkinter` for a modern
 - ✅ Video/audio format listing via `yt-dlp`
 - ✅ Progress tracking and terminal output
 - ✅ Optional file renaming
-- ✅ Auto-scroll output (on/off toggle)
-- ✅ Light/Dark mode switch
 
 ---
 
@@ -24,7 +22,7 @@ A YouTube video downloader built with Python, using `customtkinter` for a modern
 Install the necessary dependencies using pip:
 
 ```bash
-pip install customtkinter yt-dlp pytube tk
+pip install customtkinter yt-dlp tk
 ```` 
 
 ---
@@ -73,6 +71,7 @@ The project was inspired by several YouTube tutorials and resources, including:
 * ChatGPT 3.5/GPT-4o
 * GitHub
 * Google
+* Gemini 2.5 Pro
 
 ---
 
