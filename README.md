@@ -1,62 +1,43 @@
 # 🎥 Python YouTube Video Downloader Project
 
-A YouTube video downloader built with Python, using `customtkinter` for a modern GUI and `yt-dlp`/`pytube` for downloading video and audio content. This app allows users to:
+A tool for data liberation. Stop streaming. Start owning.
 
-- View available video/audio formats for any YouTube video
-- Choose specific stream IDs to download
-- Monitor download progress
+They provide temporary access to data streams, designed to keep you a passive consumer. This tool changes that relationship. It retrieves the highest quality source data, rebuilds it into a compliant and permanent file, and places it under your direct control.
 
----
+## Features
 
-## 📦 Features
+*   **One-Click Operation:** No more searching for obscure format codes. Paste a URL, click one button.
+*   **Intelligent Encoding:** The system performs reconnaissance before downloading. It scans the source video and audio bitrates and dynamically builds the perfect encoding profile. It doesn't waste your machine's power creating a high-resolution photo of a blurry image.
+*   **Professional Editor Compliance:** The re-encoding protocol creates standard H.264/AAC files designed to work flawlessly in professional NLEs like DaVinci Resolve, Premiere Pro, and Final Cut, eliminating "Media Offline" errors caused by web-native formats.
+*   **Total Control:** For non-standard cases, the tool retains a manual override system for downloading by specific format ID and a command-line input for injecting any advanced `yt-dlp` flag you require.
 
-- ✅ Modern interface using `customtkinter`
-- ✅ Video/audio format listing via `yt-dlp`
-- ✅ Progress tracking and terminal output
-- ✅ Optional file renaming
+## Prerequisites
 
----
+1.  **Python 3.x:** Must be installed on your system.
+2.  **FFmpeg:** **CRITICAL.** `ffmpeg` **must** be installed and accessible in your system's PATH. The merging and re-encoding functions will fail without it. You can get it from [ffmpeg.org](https://ffmpeg.org/download.html).
+3.  **Python Libraries:** Install the necessary components using pip.
+    ```bash
+    pip install customtkinter yt-dlp tk
+    ```
 
-## 🔧 Requirements
+## How to Use
 
-Install the necessary dependencies using pip:
+1.  Save the code as a Python file (e.g., `liberator.py`).
+2.  Run it from your terminal:
+    ```bash
+    python liberator.py
+    ```
+3.  **Primary Workflow:**
+    *   Paste the target video URL into the top input box.
+    *   (Optional) Provide a custom filename. If left blank, the video's original title will be used.
+    *   Choose your encoding protocol from the dropdown menu:
+        *   **`Auto-Optimize (Recommended)`:** This is the default and smartest option. It scans the source and applies the appropriate level of quality for a perfect, efficient re-encode. **Use this.**
+        *   **`Fast Merge`:** The quickest option. Copies the original video and audio streams into an MP4 container without re-encoding. It is fast but may not be compatible with editing software.
+        *   **`Near-Lossless Re-encode`:** The brute-force option. Overrides the auto-detection and encodes at the highest possible quality settings, regardless of the source. Use this if you have a specific reason to.
+    *   Click the red **`DOWNLOAD`** button.
+4.  Wait for the process to complete in the terminal monitor. Downloaded files will be saved in a `Downloads` folder created in the same directory as the script.
 
-```bash
-pip install customtkinter yt-dlp tk
-```` 
-
----
-
-## 🚀 How to Run
-
-1. Clone or download this repository.
-2. Ensure the required packages are installed.
-3. Run the script:
-
-```bash
-python Python_YouTube_Downloader_Project.py
-```
-
----
-
-## 🖥️ How to Use
-
-1. Paste a YouTube video URL into the URL input field.
-2. Click **Search** to retrieve video metadata and available format IDs.
-3. Review available formats in the terminal output window.
-4. Enter the desired format **ID** in the provided input field.
-5. (Optional) Rename the file using the rename input field.
-6. Click **Download** to start downloading the video/audio.
-
----
-
-## 📁 Output Location
-
-All downloaded files will be saved in the `Downloads/` directory (created automatically if it doesn't exist).
-
----
-
-## 📚 Sources
+## Sources
 
 The project was inspired by several YouTube tutorials and resources, including:
 
@@ -72,9 +53,3 @@ The project was inspired by several YouTube tutorials and resources, including:
 * GitHub
 * Google
 * Gemini 2.5 Pro
-
----
-
-## ⚠️ Disclaimer
-
-This project is for educational purposes only.
