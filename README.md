@@ -20,17 +20,17 @@ A tool for data liberation.
 
 ## How to Use
 
-1.  Save the code as a Python file (e.g., `liberator.py`).
+1.  Save the code as a Python file.
 2.  Run it from your terminal:
     ```bash
-    python liberator.py
+    python main.py
     ```
 3.  **Primary Workflow:**
     *   Paste the target video URL into the top input box.
     *   (Optional) Provide a custom filename. If left blank, the video's original title will be used.
     *   Choose your encoding protocol from the dropdown menu:
         *   **`Auto-Optimize (Recommended)`:** This is the default and smartest option. It scans the source and applies the appropriate level of quality for a perfect, efficient re-encode. **Use this.**
-        *   **`Fast Merge`:** The quickest option. Copies the original video and audio streams into an MP4 container without re-encoding. It is fast but may not be compatible with editing software.
+        *   **`Fast Merge`:** The quickest option. Copies the original video and audio streams into an MP4 container **without re-encoding**. It is fast but may not be compatible with editing software.
         *   **`Near-Lossless Re-encode`:** The brute-force option. Overrides the auto-detection and encodes at the highest possible quality settings, regardless of the source. You can use this if you have a specific reason to.
     *   Click the red **`DOWNLOAD`** button.
 4.  Wait for the process to complete in the terminal monitor. Downloaded files will be saved in a `Downloads` folder created in the same directory as the script.
