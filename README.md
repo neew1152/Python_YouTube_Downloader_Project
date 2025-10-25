@@ -31,7 +31,7 @@ A tool for data liberation.
     *   Choose your encoding protocol from the dropdown menu:
         *   **`Auto-Optimize (Recommended)`:** This is the default and smartest option. It scans the source and applies the appropriate level of quality for a perfect, efficient re-encode. **Use this.**
         *   **`Fast Merge`:** The quickest option. Copies the original video and audio streams into an MP4 container without re-encoding. It is fast but may not be compatible with editing software.
-        *   **`Near-Lossless Re-encode`:** The brute-force option. Overrides the auto-detection and encodes at the highest possible quality settings, regardless of the source. Use this if you have a specific reason to.
+        *   **`Near-Lossless Re-encode`:** The brute-force option. Overrides the auto-detection and encodes at the highest possible quality settings, regardless of the source. You can use this if you have a specific reason to.
     *   Click the red **`DOWNLOAD`** button.
 4.  Wait for the process to complete in the terminal monitor. Downloaded files will be saved in a `Downloads` folder created in the same directory as the script.
 
