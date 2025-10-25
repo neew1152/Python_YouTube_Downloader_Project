@@ -10,7 +10,7 @@ A YouTube video downloader built with Python, using `customtkinter` for a modern
 
 ## 📦 Features
 
-- ✅ Sleek modern interface using `customtkinter`
+- ✅ Modern interface using `customtkinter`
 - ✅ Video/audio format listing via `yt-dlp`
 - ✅ Progress tracking and terminal output
 - ✅ Optional file renaming
