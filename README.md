@@ -1,8 +1,6 @@
 # 🎥 Python YouTube Video Downloader Project
 
-A tool for data liberation. Stop streaming. Start owning.
-
-They provide temporary access to data streams, designed to keep you a passive consumer. This tool changes that relationship. It retrieves the highest quality source data, rebuilds it into a compliant and permanent file, and places it under your direct control.
+A tool for data liberation.
 
 ## Features
 
