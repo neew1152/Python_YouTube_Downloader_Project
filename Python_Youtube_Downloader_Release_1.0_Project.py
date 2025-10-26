@@ -186,7 +186,7 @@ def download_best():
                 "-preset", "slow",
                 "-r", str(fps),
                 "-c:a", "flac",
-                "-pix_fmt", "yuv420p",
+                "-pix_fmt", "yuv444p",
                 "-threads", "0",
                 "-y", final_output_file,
             ]
@@ -202,7 +202,7 @@ def download_best():
                 "-tag:v", "hev1",
                 "-r", str(fps),
                 "-c:a", "flac",
-                "-pix_fmt", "yuv420p",
+                "-pix_fmt", "yuv444p",
                 "-threads", "0",
                 "-y", final_output_file,
             ]
