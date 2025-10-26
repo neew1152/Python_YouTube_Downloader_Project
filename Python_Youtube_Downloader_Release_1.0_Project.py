@@ -295,3 +295,4 @@ flags_input.pack(fill="x", padx=5, pady=5)
 # --- Start Application ---
 app.mainloop()
 
+# The code is rewritten by Gemini 2.5 Pro
