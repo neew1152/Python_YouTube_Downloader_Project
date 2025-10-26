@@ -185,8 +185,7 @@ def download_best():
                 "-crf", "16",
                 "-preset", "slow",
                 "-r", str(fps),
-                "-c:a", "aac",
-                "-b:a", "320k",
+                "-c:a", "flac",
                 "-pix_fmt", "yuv420p",
                 "-threads", "0",
                 "-y", final_output_file,
@@ -200,10 +199,9 @@ def download_best():
                 "-c:v", "libx265",
                 "-crf", "16",
                 "-preset", "slow",
-                "-tag:v", "hvc1",
+                "-tag:v", "hev1",
                 "-r", str(fps),
-                "-c:a", "aac",
-                "-b:a", "320k",
+                "-c:a", "flac",
                 "-pix_fmt", "yuv420p",
                 "-threads", "0",
                 "-y", final_output_file,
@@ -294,5 +292,3 @@ flags_input.pack(fill="x", padx=5, pady=5)
 
 # --- Start Application ---
 app.mainloop()
-
-# The code is rewritten by Gemini 2.5 Pro
