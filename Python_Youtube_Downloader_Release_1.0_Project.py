@@ -257,8 +257,8 @@ best_button = customtkinter.CTkButton(
 )
 best_button.pack(side="left", fill="x", expand=True, padx=5, pady=5)
 quality_options = [
-    "Visually Lossless (x264)",
     "Visually Lossless (x265)",
+    "Visually Lossless (x264)",
     "Fast Merge",
 ]
 quality_menu = customtkinter.CTkOptionMenu(
@@ -292,3 +292,4 @@ flags_input.pack(fill="x", padx=5, pady=5)
 
 # --- Start Application ---
 app.mainloop()
+
