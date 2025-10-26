@@ -132,7 +132,7 @@ def download_best():
             ).strip()
             # Sanitize filename for filesystem
             filename = "".join(
-                c for c in filename if c.isalnum() or c in ("-", "_")
+                c for c in filename if c.isalnum() or c in (" ", "-", "_")
             ).rstrip()
             monitor_frame.insert(tkinter.END, f"Identity confirmed: {filename}\n")
         except Exception as e:
@@ -294,3 +294,4 @@ flags_input.pack(fill="x", padx=5, pady=5)
 
 # --- Start Application ---
 app.mainloop()
+
