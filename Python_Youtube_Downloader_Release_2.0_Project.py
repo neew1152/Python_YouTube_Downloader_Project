@@ -397,4 +397,7 @@ class YouTubeDownloaderApp(customtkinter.CTk):
 
 if __name__ == "__main__":
     app = YouTubeDownloaderApp()
+
     app.mainloop()
+
+# The code is rewritten by Gemini 3.1 Pro Preview
