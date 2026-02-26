@@ -11,7 +11,7 @@ Built with strict attention to stability, usability, and clean architecture:
 *   **Modern, Responsive UI**: Powered by `customtkinter`, featuring a clean, dark-themed, and intuitive interface that dynamically scales to 50% of your screen resolution.
 *   **100% Non-Blocking Architecture**: Fully multi-threaded background processing. The UI remains buttery-smooth and responsive even during heavy downloads or format extraction.
 *   **Smart URL Analysis**: Automatically detects whether a URL is a single video or a playlist. 
-*   **Advanced Playlist Handling**: Automatically generates dedicated folders for playlists and sequences filenames seamlessly.
+*   **Advanced Playlist Handling**: Automatically generates dedicated folders for playlists and sequences' filenames seamlessly.
 *   **Format Reconnaissance**: List all available video/audio formats for a given URL and manually download specific format IDs (e.g., `137+140`).
 *   **Automated Quality Merging**: Fetches the absolute best video and best audio streams independently and merges them natively into a high-quality `.mkv` container using FFmpeg.
 *   **One-Click `yt-dlp` Updater**: Built-in update button to seamlessly upgrade `yt-dlp` via native commands or Pip, preventing "unrecognized arguments" or broken extraction errors as YouTube updates its backend.
@@ -47,19 +47,19 @@ winget install --id Gyan.FFmpeg && pip install customtkinter yt-dlp
 *   Made the script fully `PyInstaller` safe (`sys.frozen` checks).
 *   Unified UI aesthetics into a clean, minimal layout with a unified read-only console.
 
+### 💎 Release 1.0
+*   **Engineered by Gemini 3 Pro Preview.**
+*   Introduced FFmpeg direct pipeline for "Visually Lossless" x264/x265 hardware encoding.
+*   Added True Identity verification to secure video titles before downloading.
+*   Added UUID-based temporary file generation to prevent overwrite collisions.
+*   Implemented dynamic FPS extraction for pristine video reconstruction.
+*   Added manual `yt-dlp` advanced flags input bar.
+
 ### 🚀 Beta 8.0
 *   **Major Refactor by Gemini 2.5 Pro.**
 *   *Removed PyTube dependency entirely* (due to constant cipher breakages on YouTube's end). Fully transitioned to pure `yt-dlp`.
 *   Codebase highly condensed and optimized for readability.
-*   Improved input striping and empty-field validations.
-
-### 💎 Release 1.0
-*   **Engineered by Gemini 3 Pro Preview.**
-*   Introduced FFmpeg direct pipeline for "Visually Lossless" x264/x265 hardware encoding.
-*   Added True Identity verification to secure video titles securely before downloading.
-*   Added UUID-based temporary file generation to prevent overwrite collisions.
-*   Implemented dynamic FPS extraction for pristine video reconstruction.
-*   Added manual `yt-dlp` advanced flags input bar.
+*   Improved input stripping and empty-field validations.
 
 ### 🛠️ Beta 6.5
 *   Introduced the ability to manually rename output files prior to downloading.
