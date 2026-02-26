@@ -1,5 +1,7 @@
 # 🐍 Python YouTube Downloader (Release 2.0)
 
+<img width="962" height="572" alt="Untitled" src="https://github.com/user-attachments/assets/e2eb6ea0-94d4-4570-a106-b35088763e6f" />
+
 A powerful, modern, and highly resilient YouTube video and playlist downloader built with Python. Evolving from basic scripts to a fully threaded, non-blocking graphical application, this project utilizes `customtkinter`, `yt-dlp`, and `FFmpeg` to deliver the ultimate video acquisition experience. 
 
 ---
