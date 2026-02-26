@@ -98,7 +98,7 @@ This project is a testament to the power of human curiosity combined with Artifi
     *   * https://www.youtube.com/watch?v=GeflXCubyrA
     *   * https://www.youtube.com/watch?v=QRroCuY1Bhc
     *   * https://www.youtube.com/watch?v=df30Qro3Iu4
-    *   * (Note: Some original tutorial videos have since been deleted or made private.)*
+    *   * (Note: Some original tutorial videos have since been deleted or made private.)
 *   https://github.com/yt-dlp/yt-dlp
 *   https://github.com/TomSchimansky/CustomTkinter
 *   https://www.google.com
