@@ -255,13 +255,14 @@ app.update()
 app.mainloop()
 
 # The code is written by learning from
-# youtu.be/NI9LXzo0UY0?si=1u8QGDkoxPAlTGEK
-# youtu.be/Miydkti_QVE?si=10SWZsQkcRlB9lc3
-# youtu.be/5aYwU4nj5QA?si=HqAzziu8WynyBy5m
-# youtu.be/Envp9yHb2Ho?si=6MHc2Dz_6_2bt0G4
-# youtu.be/EwL2BwEdduE?si=4mrdIAUNDDQTvj-f
-# youtu.be/a0MVOloNLB4?si=xWd4W-Q8dpnm2rak
-# youtu.be/GeflXCubyrA?si=ytOZIHvnd6J_87Vm
-# youtu.be/QRroCuY1Bhc?si=ftS6KzHBPwhftw2k
+# https://www.youtube.com/watch?v=NI9LXzo0UY0
+# https://www.youtube.com/watch?v=Miydkti_QVE
+# https://www.youtube.com/watch?v=Envp9yHb2Ho
+# https://www.youtube.com/watch?v=EwL2BwEdduE
+# https://www.youtube.com/watch?v=a0MVOloNLB4
+# https://www.youtube.com/watch?v=GeflXCubyrA
+# https://www.youtube.com/watch?v=QRroCuY1Bhc
+# https://www.youtube.com/watch?v=df30Qro3Iu4
 # Some videos have been deleted.
+
 # ChatGPT 3.5, ChatGPT-4o, GitHub and Google.
