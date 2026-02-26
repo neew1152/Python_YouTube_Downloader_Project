@@ -25,7 +25,7 @@ class YouTubeDownloaderApp(customtkinter.CTk):
         self.title("Python Youtube Downloader Release 2.0")
         screen_width = self.winfo_screenwidth()
         screen_height = self.winfo_screenheight()
-        self.geometry(f"{int(screen_width * 0.50)}x{int(screen_height * 0.60)}")
+        self.geometry(f"{int(screen_width * 0.50)}x{int(screen_height * 0.50)}")
         self.protocol("WM_DELETE_WINDOW", self.on_closing)
         
         # Setup Download Directory (PyInstaller safe)
@@ -401,3 +401,4 @@ if __name__ == "__main__":
     app.mainloop()
 
 # The code is rewritten by Gemini 3.1 Pro Preview
+
