@@ -1,77 +1,104 @@
-# Python YouTube Downloader Project
+# 🐍 Python YouTube Downloader (Release 2.0)
 
-This project provides a simple GUI for downloading videos from YouTube using `yt-dlp`. It supports various download modes, including best quality, manual download by ID, and more.  It also attempts to utilize ffmpeg if available.
+A powerful, modern, and highly resilient YouTube video and playlist downloader built with Python. Evolving from basic scripts to a fully threaded, non-blocking graphical application, this project utilizes `customtkinter`, `yt-dlp`, and `FFmpeg` to deliver the ultimate video acquisition experience. 
 
-## Prerequisites
+---
 
-*   **Python:** Make sure you have Python installed on your system.
-*   **Dependencies:** Install the required Python packages using pip:
+## ✨ Features (Perfectionism)
 
-    ```bash
-    pip install customtkinter yt-dlp tk
-    ```
-*   **FFmpeg:**  Ensure FFmpeg is installed and accessible in your system's PATH environment variable.  This is *crucial* for the visually lossless modes.  You may need to restart your terminal or IDE after installing FFmpeg.
+Built with strict attention to stability, usability, and clean architecture:
 
-## Features
+*   **Modern, Responsive UI**: Powered by `customtkinter`, featuring a clean, dark-themed, and intuitive interface that dynamically scales to 50% of your screen resolution.
+*   **100% Non-Blocking Architecture**: Fully multi-threaded background processing. The UI remains buttery-smooth and responsive even during heavy downloads or format extraction.
+*   **Smart URL Analysis**: Automatically detects whether a URL is a single video or a playlist. 
+*   **Advanced Playlist Handling**: Automatically generates dedicated folders for playlists and sequences filenames seamlessly.
+*   **Format Reconnaissance**: List all available video/audio formats for a given URL and manually download specific format IDs (e.g., `137+140`).
+*   **Automated Quality Merging**: Fetches the absolute best video and best audio streams independently and merges them natively into a high-quality `.mkv` container using FFmpeg.
+*   **One-Click `yt-dlp` Updater**: Built-in update button to seamlessly upgrade `yt-dlp` via native commands or Pip, preventing "unrecognized arguments" or broken extraction errors as YouTube updates its backend.
+*   **Bulletproof Process Management**: OS-level thread and subprocess tracking. Closing the app triggers a graceful shutdown, safely terminating active downloads, clearing memory, and preventing ghost processes (`SIGKILL`/`taskkill`).
+*   **Sanitized Filesystem Operations**: Intelligent filename sanitization removes illegal characters, preventing OS-level saving errors.
+*   **Real-Time Queue-Based Logging**: A built-in terminal monitor that streams subprocess output directly to the UI in real-time, safely managed via thread queues.
+*   **Deployment Ready**: Directory structures and base-path logic are strictly designed to be 100% compatible with standalone executable compilers like `PyInstaller`.
 
-*   **Download Best Quality:** Downloads the best available video and audio streams. Options for merging with the best options, with `Fast Merge` and  `Visually Lossless` options via calling external ffmpeg commands.
-*   **Manual Download by ID:** Allows specifying the video ID to download specific formats.
-*   **List Formats:** Displays available formats for a given URL (useful for manual downloads).
-*   **Custom Flags:** Supports adding custom `yt-dlp` flags for advanced control (e.g., specifying cookies, user agents).
-*   **Progress Monitoring:** Provides a text box to display download progress, errors, and informational messages.
-*   **Automatic Filename:** Attempts to derive the filename from the video title.
-*   **Error Handling:** Includes error handling to catch exceptions during the download process and provide informative error messages.
+---
 
-## Usage
+## ⚙️ Setup & Installation
 
-1.  **Run the script:**  Execute the Python script (`your_script_name.py`).
-2.  **Paste the YouTube URL:** Enter the YouTube video URL in the "Step 1: Paste Target URL here..." field.
-3.  **Choose a download method:**  Select an option from the `quality_menu` which offers options, or for specific formatting, select 'List All Formats', copy ID's, then set 'Download By ID'.
-4.  **Optional: Add a Custom Filename:** Fill in filename and path here if desired.
-5.  **Optional: Advanced Flags:** If required, set advanced options.
-6.  **Click a Button:** Use the different buttons.
+To run this application natively, you need Python installed on your system along with FFmpeg (for merging audio and video streams) and the required Python packages.
 
-    *   `DOWNLOAD`: This attempts to retrieve the best options with quality constraints, using `Visually Lossless (x264/x265)`, or Fast Merge.  This attempts to find target names to generate file names from titles or creates its own GUID.  Then, the download process begins on the monitor screen.
-    *   `List All Formats`: Displays available formats. Useful for downloading individual video or audio tracks.
-    *   `Download By ID`: Downloads the stream by ID.
+Open your terminal or command prompt (Run as Administrator recommended for Winget) and execute the following:
 
-7.  **Monitor the Progress:** The download progress and any output from `yt-dlp` and `ffmpeg` will be displayed in the text monitor area.
-8.  **Downloaded Files:** Downloaded videos will be saved in a "Downloads" directory in the same folder as your Python script or configured to.
+```powershell
+winget install --id Gyan.FFmpeg && pip install customtkinter yt-dlp
+```
 
-## Configuration
+*Note: Ensure `ffmpeg` is properly added to your system's Environment Variables (PATH). Winget usually handles this automatically, but a terminal restart may be required.*
 
-*   **FFmpeg Path:** Make sure FFmpeg is correctly installed and its executable is in your system's PATH.
+---
 
-## Troubleshooting
+## 📜 Changelogs
 
-*   **Missing FFmpeg:** If you happen to encounter errors related to FFmpeg, please make sure that FFmpeg is installed and in your system's PATH. You may need to restart your terminal or IDE for the changes to take effect.
-*   **Dependencies:**  Double-check that all required Python packages are installed correctly.
-*   **Permissions:**  Ensure that your user has the necessary permissions to create files and directories in the "Downloads" directory or whatever directory has been selected.
-*   **URL Issues:** Verify that the provided YouTube URL is valid.
-*   **Error Messages:** Carefully read any error messages displayed in the output monitor; they usually contain helpful information about the problem.
-*   **Internet Connection:** Ensure you have an active internet connection during the download process.
+### 👑 Release 2.0 (Current)
+*   **Perfected by Gemini 3.1 Pro Preview.**
+*   Implemented `threading` and `queue` systems to completely eliminate GUI freezing.
+*   Added native OS-level subprocess killing (`taskkill` / `SIGKILL`) for instantaneous, clean app exits.
+*   Added full Playlist Support (auto-detects, creates subfolders, formats names).
+*   Added GUI one-click native `yt-dlp` update utility.
+*   Made the script fully `PyInstaller` safe (`sys.frozen` checks).
+*   Unified UI aesthetics into a clean, minimal layout with a unified read-only console.
 
-## Known Limitations
+### 🚀 Beta 8.0
+*   **Major Refactor by Gemini 2.5 Pro.**
+*   *Removed PyTube dependency entirely* (due to constant cipher breakages on YouTube's end). Fully transitioned to pure `yt-dlp`.
+*   Codebase highly condensed and optimized for readability.
+*   Improved input striping and empty-field validations.
 
-*   Requires FFmpeg for "Visually Lossless" and possibly the best output via quality options to operate as expected.
-*   The GUI is basic and could be enhanced.
-*   Doesn't support all `yt-dlp` features (but custom flags allow flexibility).
-*   Error handling, particularly for FFmpeg-related errors, could be improved.
-*   Might not work with every single YouTube video, as some may use techniques for bypassing this system, and/or may require special arguments.
+### 💎 Release 1.0
+*   **Engineered by Gemini 3 Pro Preview.**
+*   Introduced FFmpeg direct pipeline for "Visually Lossless" x264/x265 hardware encoding.
+*   Added True Identity verification to secure video titles securely before downloading.
+*   Added UUID-based temporary file generation to prevent overwrite collisions.
+*   Implemented dynamic FPS extraction for pristine video reconstruction.
+*   Added manual `yt-dlp` advanced flags input bar.
 
-## Sources
+### 🛠️ Beta 6.5
+*   Introduced the ability to manually rename output files prior to downloading.
+*   Improved CLI error handling and GUI updates.
+*   Streamlined formatting strings to automatically capture `%(title)s.%(ext)s`.
 
-The project was inspired by several YouTube tutorials and resources, including:
+### 🧪 Beta 4.0
+*   Implemented initial graphical user interface using `customtkinter`.
+*   Integrated dual-library approach (`yt-dlp` for formatting/CLI commands, `pytube` for metadata and progress tracking).
+*   Added real-time subprocess stdout monitoring with an Auto-Scroll toggle.
+*   Added basic Light/Dark appearance mode switch.
 
-* https://www.youtube.com/watch?v=NI9LXzo0UY0
-* https://www.youtube.com/watch?v=Miydkti_QVE
-* https://www.youtube.com/watch?v=Envp9yHb2Ho
-* https://www.youtube.com/watch?v=EwL2BwEdduE
-* https://www.youtube.com/watch?v=a0MVOloNLB4
-* https://www.youtube.com/watch?v=GeflXCubyrA
-* https://www.youtube.com/watch?v=QRroCuY1Bhc
-* https://www.youtube.com/watch?v=df30Qro3Iu4
-* ChatGPT 3.5/GPT-4o
-* GitHub
-* Google
-* Gemini 2.5 Pro
+### 🛑 Beta 1.0 - Beta 3.0
+*   🗄️ **Status:** *Archive loss / Records lost / Missing.* 
+*   *Notes:* Early experimental builds. Source code is lost to the digital void.
+
+---
+
+## 🧠 Sources and Professors (AI)
+
+This project is a testament to the power of human curiosity combined with Artificial Intelligence. 
+
+**AI "Professors" & Code Architects:**
+*   🤖 **ChatGPT 3.5 & ChatGPT-4o**: Assisted with foundational logic, UI sizing, and early debugging (Beta 4.0 - Beta 6.5).
+*   🧠 **Gemini 2.5 Pro**: Provided the first major code cleanup, stripping redundant libraries and establishing solid Python logic (Beta 8.0).
+*   🔬 **Gemini 3 Pro Preview**: Introduced advanced FFmpeg encoding pipelines, system reconnaissance, and advanced command list structuring (Release 1.0).
+*   🌌 **Gemini 3.1 Pro Preview**: Engineered the final, bulletproof multi-threaded architecture, queue-logging, and graceful OS-level process handling (Release 2.0).
+
+**Community Sources & Inspiration:**
+*   Original syntax logic and CustomTkinter inspiration gathered from various YouTube tutorials, including (but not limited to):
+    *   * https://www.youtube.com/watch?v=NI9LXzo0UY0
+    *   * https://www.youtube.com/watch?v=Miydkti_QVE
+    *   * https://www.youtube.com/watch?v=Envp9yHb2Ho
+    *   * https://www.youtube.com/watch?v=EwL2BwEdduE
+    *   * https://www.youtube.com/watch?v=a0MVOloNLB4
+    *   * https://www.youtube.com/watch?v=GeflXCubyrA
+    *   * https://www.youtube.com/watch?v=QRroCuY1Bhc
+    *   * https://www.youtube.com/watch?v=df30Qro3Iu4
+    *   * (Note: Some original tutorial videos have since been deleted or made private.)*
+*   https://github.com/yt-dlp/yt-dlp
+*   https://github.com/TomSchimansky/CustomTkinter
+*   https://www.google.com
