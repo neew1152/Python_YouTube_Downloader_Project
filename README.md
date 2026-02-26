@@ -26,15 +26,11 @@ Built with strict attention to stability, usability, and clean architecture:
 
 ## ⚙️ Setup & Installation
 
-To run this application natively, you need Python installed on your system along with FFmpeg (for merging audio and video streams) and the required Python packages.
-
 Open your terminal or command prompt (Run as Administrator recommended for Winget) and execute the following:
 
 ```powershell
-winget install --id Gyan.FFmpeg && pip install customtkinter yt-dlp
+winget install --id Gyan.FFmpeg && winget install --id OpenJS.NodeJS && pip install customtkinter yt-dlp
 ```
-
-*Note: Ensure `ffmpeg` is properly added to your system's Environment Variables (PATH). Winget usually handles this automatically, but a terminal restart may be required.*
 
 ---
 
