@@ -83,7 +83,7 @@ winget install --id Gyan.FFmpeg && pip install customtkinter yt-dlp
 This project is a testament to the power of human curiosity combined with Artificial Intelligence. 
 
 **AI "Professors" & Code Architects:**
-*   🤖 **ChatGPT 3.5 & ChatGPT-4o**: Assisted with foundational logic, UI sizing, and early debugging (Beta 4.0 - Beta 6.5).
+*   🤖 **ChatGPT-3.5 & ChatGPT-4o**: Assisted with foundational logic, UI sizing, and early debugging (Beta 4.0 - Beta 6.5).
 *   🧠 **Gemini 2.5 Pro**: Provided the first major code cleanup, stripping redundant libraries and establishing solid Python logic (Beta 8.0).
 *   🔬 **Gemini 3 Pro Preview**: Introduced advanced FFmpeg encoding pipelines, system reconnaissance, and advanced command list structuring (Release 1.0).
 *   🌌 **Gemini 3.1 Pro Preview**: Engineered the final, bulletproof multi-threaded architecture, queue-logging, and graceful OS-level process handling (Release 2.0).
