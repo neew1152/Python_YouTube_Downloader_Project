@@ -324,7 +324,7 @@ class YouTubeDownloaderApp(customtkinter.CTk):
             if not url:
                 self.log("Error: URL cannot be empty.\n")
                 return
-            self.run_subprocess(["yt-dlp", "--no-playlist", "--client", "ios,android,tv", "-F", "--", url], "LIST FORMATS")
+            self.run_subprocess(["yt-dlp", "--no-playlist", "--extractor-args", "youtube:player_client=ios,android,tv", "-F", "--", url], "LIST FORMATS")
         finally:
             self._restore_gui_safe()
 
@@ -340,7 +340,7 @@ class YouTubeDownloaderApp(customtkinter.CTk):
             output_template = os.path.join(self.download_dir, f"{clean_name or '%(title)s'}.%(ext)s")
             
             command = [
-                "yt-dlp", "--no-playlist", "--newline", "--client", "ios,android,tv", 
+                "yt-dlp", "--no-playlist", "--newline", "--extractor-args", "youtube:player_client=ios,android,tv",
                 "-f", video_id, "--merge-output-format", "mkv", "-o", output_template, "--", url
             ]
             success = self.run_subprocess(command, "MANUAL DOWNLOAD")
@@ -365,7 +365,7 @@ class YouTubeDownloaderApp(customtkinter.CTk):
             is_playlist = (raw_title != "NA" and bool(raw_title))
             clean_custom_name = self._sanitize_filename(custom_filename)
 
-            base_cmd = ["yt-dlp", "--newline", "--client", "ios,android,tv", 
+            base_cmd = ["yt-dlp", "--newline", "--extractor-args", "youtube:player_client=ios,android,tv",
                         "-f", "bestvideo+bestaudio/best", "--merge-output-format", "mkv"]
 
             if is_playlist:
@@ -401,4 +401,5 @@ if __name__ == "__main__":
     app.mainloop()
 
 # The code is rewritten by Gemini 3.1 Pro Preview
+
 
