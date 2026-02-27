@@ -36,7 +36,7 @@ class YouTubeDownloaderApp(customtkinter.CTk):
         self.download_dir = os.path.join(base_dir, "Downloads")
 
         # UI Elements
-        self.url_input = customtkinter.CTkEntry(self, placeholder_text="Step 1: Enter Target URL here...")
+        self.url_input = customtkinter.CTkEntry(self, placeholder_text="Step 1: Paste Target URL (Video, Playlist)...")
         self.url_input.pack(fill="x", padx=10, pady=(10, 5))
 
         self.primary_frame = customtkinter.CTkFrame(self)
@@ -48,7 +48,12 @@ class YouTubeDownloaderApp(customtkinter.CTk):
         )
         self.update_button.pack(side="left", padx=5, pady=5)
 
-        self.best_button = customtkinter.CTkButton(self.primary_frame, text="Download Best Quality", command=self.start_download_best)
+        self.best_button = customtkinter.CTkButton(
+            self.primary_frame, 
+            text="DOWNLOAD BEST QUALITY", 
+            command=self.start_download_best,
+            fg_color="#1f538d", hover_color="#14375e"
+        )
         self.best_button.pack(side="left", fill="x", expand=True, padx=5, pady=5)
 
         self.filename_input = customtkinter.CTkEntry(self, placeholder_text="Optional: Enter Video/Playlist Name...")
@@ -91,7 +96,7 @@ class YouTubeDownloaderApp(customtkinter.CTk):
             threading.Thread(target=self._kill_process_and_exit, args=(proc,), daemon=True).start()
         else:
             self.destroy()
-            os._exit(0)
+            sys.exit(0)
 
     def _kill_process_and_exit(self, proc: subprocess.Popen):
         """Forcefully terminates the subprocess tree at the OS level."""
@@ -114,7 +119,7 @@ class YouTubeDownloaderApp(customtkinter.CTk):
         if not shutil.which("yt-dlp"):
             self.log("\n[ERROR] 'yt-dlp' is missing! Click 'Update yt-dlp' or install via pip.\n")
         if not shutil.which("ffmpeg"):
-            self.log("\n[WARNING] 'ffmpeg' is missing from PATH! Video and audio may not merge.\n\n")
+            self.log("\n[WARNING] 'ffmpeg' is missing from PATH! Downloads will be limited to pre-merged formats (max 720p).\n\n")
 
     # --- GUI Updaters ---
     
@@ -184,7 +189,13 @@ class YouTubeDownloaderApp(customtkinter.CTk):
                 text = text[:-len(ext)]
                 break
                 
-        return "".join(c for c in text if c.isalnum() or c in " -_.").rstrip()
+        clean_text = "".join(c for c in text if c.isalnum() or c in " -_.").rstrip()
+        
+        # Prevent directory traversal
+        if clean_text in (".", ".."):
+            return "Invalid_Name"
+            
+        return clean_text
 
     def _ensure_download_dir(self) -> bool:
         try:
@@ -236,8 +247,8 @@ class YouTubeDownloaderApp(customtkinter.CTk):
             process.wait()
             success = (process.returncode == 0)
             
-            if not success and "--client" in " ".join(command_list) and not self.shutdown_event.is_set():
-                self.log("\n[TIP] If you saw an 'unrecognized arguments' error, click 'Update yt-dlp'.\n")
+            if not success and not self.shutdown_event.is_set():
+                self.log("\n[TIP] If the download failed, try clicking 'Update yt-dlp'.\n")
                 
             if not self.shutdown_event.is_set():
                 status = "SUCCEEDED" if success else f"FAILED (CODE {process.returncode})"
@@ -324,7 +335,11 @@ class YouTubeDownloaderApp(customtkinter.CTk):
             if not url:
                 self.log("Error: URL cannot be empty.\n")
                 return
-            self.run_subprocess(["yt-dlp", "--no-playlist", "--extractor-args", "youtube:player_client=ios,android,tv", "-F", "--", url], "LIST FORMATS")
+            
+            self.run_subprocess([
+                "yt-dlp", "--no-playlist", "--no-cache-dir", "--no-check-certificate", 
+                "-F", "--", url
+            ], "LIST FORMATS")
         finally:
             self._restore_gui_safe()
 
@@ -340,9 +355,16 @@ class YouTubeDownloaderApp(customtkinter.CTk):
             output_template = os.path.join(self.download_dir, f"{clean_name or '%(title)s'}.%(ext)s")
             
             command = [
-                "yt-dlp", "--no-playlist", "--newline", "--extractor-args", "youtube:player_client=ios,android,tv",
-                "-f", video_id, "--merge-output-format", "mkv", "-o", output_template, "--", url
+                "yt-dlp", "--no-playlist", "--newline", "--no-cache-dir",  
+                "--no-check-certificate", "-f", video_id, "-o", output_template
             ]
+            
+            # Conditionally add merge argument if ffmpeg exists
+            if shutil.which("ffmpeg"):
+                command.extend(["--merge-output-format", "mkv"])
+                
+            command.extend(["--", url])
+            
             success = self.run_subprocess(command, "MANUAL DOWNLOAD")
             
             if success and not self.shutdown_event.is_set():
@@ -365,13 +387,15 @@ class YouTubeDownloaderApp(customtkinter.CTk):
             is_playlist = (raw_title != "NA" and bool(raw_title))
             clean_custom_name = self._sanitize_filename(custom_filename)
 
-            base_cmd = ["yt-dlp", "--newline", "--extractor-args", "youtube:player_client=ios,android,tv",
-                        "-f", "bestvideo+bestaudio/best", "--merge-output-format", "mkv"]
+            # Fallback to standard 'best' if ffmpeg is missing to prevent unmerged audio/video split files
+            has_ffmpeg = shutil.which("ffmpeg") is not None
+            format_args = ["-f", "bestvideo+bestaudio/best", "--merge-output-format", "mkv"] if has_ffmpeg else ["-f", "best"]
+            base_cmd = ["yt-dlp", "--newline", "--no-cache-dir", "--no-check-certificate"] + format_args
 
             if is_playlist:
                 self.log("PLAYLIST DETECTED.\n")
                 pl_title = clean_custom_name if clean_custom_name else self._sanitize_filename(raw_title)
-                if not pl_title:
+                if not pl_title or pl_title == "Invalid_Name":
                     pl_title = f"Playlist_{uuid.uuid4().hex[:8]}"
                     
                 self.log(f"Target Folder: {pl_title}\n")
@@ -397,9 +421,4 @@ class YouTubeDownloaderApp(customtkinter.CTk):
 
 if __name__ == "__main__":
     app = YouTubeDownloaderApp()
-
     app.mainloop()
-
-# The code is rewritten by Gemini 3.1 Pro Preview
-
-
