@@ -31,6 +31,7 @@ Open your terminal or command prompt (Run as Administrator recommended for Winge
 ```powershell
 winget install --id Gyan.FFmpeg
 winget install --id OpenJS.NodeJS.LTS
+winget install --id Python.Python.3.14
 pip install customtkinter yt-dlp
 ```
 
