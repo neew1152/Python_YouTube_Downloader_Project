@@ -1,4 +1,4 @@
-# 🐍 Python YouTube Downloader (Release 2.0)
+# 🐍 Python YouTube Downloader (Release 2.5)
 
 <img width="962" height="572" alt="Untitled" src="https://github.com/user-attachments/assets/e2eb6ea0-94d4-4570-a106-b35088763e6f" />
 
@@ -39,7 +39,15 @@ pip install customtkinter yt-dlp
 
 ## 📜 Changelogs
 
-### 👑 Release 2.0 (Current)
+### 👑 Release 2.5 (Current)
+
+*   **Updated by Claude Sonnet 4.5.**
+*   Fixed missing `_clear_log()` call in `start_download_manual` — manual downloads no longer append onto stale log output from previous operations.
+*   Fixed playlist misdetection when `playlist_title` returns an empty string — playlists with no title are now correctly identified and handled instead of being silently treated as single videos.
+*   Fixed TOCTOU race condition in `_clear_log()` — replaced the fragile `.empty()` + `.get_nowait()` pattern with a single atomic drain loop, preventing log lines from silently vanishing under thread contention.
+*   Fixed playlist filename collision risk — downloads without a custom name now use `%(playlist_index)03d_%(title)s` instead of bare `%(title)s`, ensuring videos with identical titles don't overwrite each other.
+
+### 👑 Release 2.0
 *   **Perfected by Gemini 3.1 Pro Preview.**
 *   Implemented `threading` and `queue` systems to completely eliminate GUI freezing.
 *   Added native OS-level subprocess killing (`taskkill` / `SIGKILL`) for instantaneous, clean app exits.
@@ -84,6 +92,7 @@ pip install customtkinter yt-dlp
 This project is a testament to the power of human curiosity combined with Artificial Intelligence. 
 
 **AI "Professors" & Code Architects:**
+*   🧠 **Claude Sonnet 4.5**: Eliminated four critical threading, playlist detection, and log-handling bugs. Ensured TOCTOU safety and robust playlist handling for edge cases (Release 2.5).
 *   🌌 **Gemini 3.1 Pro Preview**: Engineered the final, bulletproof multi-threaded architecture, queue-logging, and graceful OS-level process handling (Release 2.0).
 *   🔬 **Gemini 3 Pro Preview**: Introduced advanced FFmpeg encoding pipelines, system reconnaissance, and advanced command list structuring (Release 1.0).
 *   🧠 **Gemini 2.5 Pro**: Provided the first major code cleanup, stripping redundant libraries and establishing solid Python logic (Beta 8.0).
