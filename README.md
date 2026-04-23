@@ -26,7 +26,7 @@ Built with strict attention to stability, usability, and clean architecture:
 
 ## ⚙️ Setup & Installation
 
-Open your terminal or command prompt (Run as Administrator recommended for Winget) and execute the following:
+Open your terminal or command prompt and execute the following:
 
 ```powershell
 winget install --id Gyan.FFmpeg
