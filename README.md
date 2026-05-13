@@ -1,10 +1,8 @@
 # 🐍 Python YouTube Downloader (Release 2.5)
 
-<img width="962" height="572" alt="Untitled" src="https://github.com/user-attachments/assets/e2eb6ea0-94d4-4570-a106-b35088763e6f" />
+![Software-Preview.png](https://github.com/user-attachments/assets/e2eb6ea0-94d4-4570-a106-b35088763e6f)
 
 A powerful, modern, and highly resilient YouTube video and playlist downloader built with Python. Evolving from basic scripts to a fully threaded, non-blocking graphical application, this project utilizes `customtkinter`, `yt-dlp`, and `FFmpeg` to deliver the ultimate video acquisition experience. 
-
----
 
 ## ✨ Features (Perfectionism)
 
@@ -21,8 +19,6 @@ Built with strict attention to stability, usability, and clean architecture:
 *   **Sanitized Filesystem Operations**: Intelligent filename sanitization removes illegal characters, preventing OS-level saving errors.
 *   **Real-Time Queue-Based Logging**: A built-in terminal monitor that streams subprocess output directly to the UI in real-time, safely managed via thread queues.
 *   **Deployment Ready**: Directory structures and base-path logic are strictly designed to be 100% compatible with standalone executable compilers like `PyInstaller`.
-
----
 
 ## ⚙️ Setup & Installation
 
@@ -84,8 +80,6 @@ pip install customtkinter yt-dlp
 ### 🛑 Beta 1.0 - Beta 3.0
 *   🗄️ **Status:** *Archive loss / Records lost / Missing.* 
 *   *Notes:* Early experimental builds. Source code is lost to the digital void.
-
----
 
 ## 🧠 Sources and Professors (AI)
 
