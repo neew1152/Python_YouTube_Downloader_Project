@@ -31,8 +31,6 @@ winget install --id Python.Python.3.14
 pip install customtkinter yt-dlp
 ```
 
----
-
 ## 📜 Changelogs
 
 ### 👑 Release 2.5 (Current)
