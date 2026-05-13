@@ -75,10 +75,6 @@ pip install customtkinter yt-dlp
 *   Added real-time subprocess stdout monitoring with an Auto-Scroll toggle.
 *   Added basic Light/Dark appearance mode switch.
 
-### 🛑 Beta 1.0 - Beta 3.0
-*   🗄️ **Status:** *Archive loss / Records lost / Missing.* 
-*   *Notes:* Early experimental builds. Source code is lost to the digital void.
-
 ## 🧠 Sources and Professors (AI)
 
 This project is a testament to the power of human curiosity combined with Artificial Intelligence. 
