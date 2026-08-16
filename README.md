@@ -25,9 +25,10 @@ Built with strict attention to stability, usability, and clean architecture:
 Open your Terminal and execute the following:
 
 ```powershell
-winget install --id Gyan.FFmpeg
-winget install --id OpenJS.NodeJS.LTS
-winget install --id Python.Python.3.14
+winget install DenoLand.Deno
+winget install Gyan.FFmpeg
+winget install OpenJS.NodeJS.LTS
+winget install Python.Python.3.14
 pip install customtkinter yt-dlp
 ```
 
