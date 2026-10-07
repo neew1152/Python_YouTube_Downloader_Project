@@ -33,6 +33,8 @@ pip install customtkinter yt-dlp
 pip install -U "yt-dlp[default]"
 ```
 
+https://github.com/yt-dlp/yt-dlp#impersonation
+
 ## 📜 Changelogs
 
 ### 👑 Release 2.5 (Current)
