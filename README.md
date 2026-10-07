@@ -30,6 +30,7 @@ winget install Gyan.FFmpeg
 winget install OpenJS.NodeJS.LTS
 winget install Python.Python.3.14
 pip install customtkinter yt-dlp
+pip install -U "yt-dlp[default]"
 ```
 
 ## 📜 Changelogs
