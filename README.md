@@ -35,51 +35,7 @@ pip install -U "yt-dlp[default]"
 
 https://github.com/yt-dlp/yt-dlp#impersonation
 
-## 📜 Changelogs
-
-### 👑 Release 2.5 (Current)
-
-*   **Updated by Claude Sonnet 4.5.**
-*   Fixed missing `_clear_log()` call in `start_download_manual` — manual downloads no longer append to stale log output from previous operations.
-*   Fixed playlist misdetection when `playlist_title` returns an empty string — playlists with no title are now correctly identified and handled instead of being silently treated as single videos.
-*   Fixed TOCTOU race condition in `_clear_log()` — replaced the fragile `.empty()` + `.get_nowait()` pattern with a single atomic drain loop, preventing log lines from silently vanishing under thread contention.
-*   Fixed playlist filename collision risk — downloads without a custom name now use `%(playlist_index)03d_%(title)s` instead of bare `%(title)s`, ensuring videos with identical titles don't overwrite each other.
-
-### 👑 Release 2.0
-*   **Perfected by Gemini 3.1 Pro Preview.**
-*   Implemented `threading` and `queue` systems to eliminate GUI freezing.
-*   Added native OS-level subprocess killing (`taskkill` / `SIGKILL`) for instantaneous, clean app exits.
-*   Added full Playlist Support (auto-detects, creates subfolders, formats names).
-*   Added GUI one-click native `yt-dlp` update utility.
-*   Made the script fully `PyInstaller` safe (`sys.frozen` checks).
-*   Unified UI aesthetics into a clean, minimal layout with a unified read-only console.
-
-### 💎 Release 1.0
-*   **Engineered by Gemini 3 Pro Preview.**
-*   Introduced an FFmpeg direct pipeline for "Visually Lossless" x264/x265 hardware encoding.
-*   Added True Identity verification to secure video titles before downloading.
-*   Added UUID-based temporary file generation to prevent overwrite collisions.
-*   Implemented dynamic FPS extraction for pristine video reconstruction.
-*   Added manual `yt-dlp` advanced flags input bar.
-
-### 🚀 Beta 8.0
-*   **Major Refactor by Gemini 2.5 Pro.**
-*   *Removed PyTube dependency entirely* (due to constant cipher breakages on YouTube's end). Fully transitioned to pure `yt-dlp`.
-*   Codebase highly condensed and optimized for readability.
-*   Improved input stripping and empty-field validations.
-
-### 🛠️ Beta 6.5
-*   Introduced the ability to manually rename output files before downloading.
-*   Improved CLI error handling and GUI updates.
-*   Streamlined formatting strings to automatically capture `%(title)s.%(ext)s`.
-
-### 🧪 Beta 4.0
-*   Implemented initial graphical user interface using `customtkinter`.
-*   Integrated dual-library approach (`yt-dlp` for formatting/CLI commands, `pytube` for metadata and progress tracking).
-*   Added real-time subprocess stdout monitoring with an Auto-Scroll toggle.
-*   Added basic Light/Dark appearance mode switch.
-
-## 🧠 Sources and Professors (AI)
+## 🧠 Sources and Professors
 
 This project shows the power of human curiosity combined with Artificial Intelligence. 
 
