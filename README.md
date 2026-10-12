@@ -1,8 +1,8 @@
-# 🐍 Python YouTube Downloader (Release 2.5)
+# 🐍 Python YouTube Downloader
 
 ![Software-Preview.png](https://github.com/user-attachments/assets/e2eb6ea0-94d4-4570-a106-b35088763e6f)
 
-A powerful, modern, and highly resilient YouTube video and playlist downloader built with Python. Evolving from basic scripts to a fully threaded, non-blocking graphical application, this project utilizes `customtkinter`, `yt-dlp`, and `FFmpeg` to deliver the ultimate video acquisition experience. 
+A powerful, modern, and highly resilient YouTube video and playlist downloader built with Python. Evolving from basic scripts to a fully threaded, non-blocking GUI application, this project uses `customtkinter`, `yt-dlp`, and `FFmpeg` to deliver a seamless video-downloading experience. 
 
 ## ✨ Features (Perfectionism)
 
@@ -12,7 +12,7 @@ Built with strict attention to stability, usability, and clean architecture:
 *   **100% Non-Blocking Architecture**: Fully multi-threaded background processing. The UI remains buttery-smooth and responsive even during heavy downloads or format extraction.
 *   **Smart URL Analysis**: Automatically detects whether a URL is a single video or a playlist. 
 *   **Advanced Playlist Handling**: Automatically generates dedicated folders for playlists and sequences' filenames seamlessly.
-*   **Format Reconnaissance**: List all available video/audio formats for a given URL and manually download specific format IDs (e.g., `137+140`).
+*   **Format Reconnaissance**: Lists all available video/audio formats for a given URL and manually downloads specific format IDs (e.g., `137+140`).
 *   **Automated Quality Merging**: Fetches the absolute best video and best audio streams independently and merges them natively into a high-quality `.mkv` container using FFmpeg.
 *   **One-Click `yt-dlp` Updater**: Built-in update button to seamlessly upgrade `yt-dlp` via native commands or Pip, preventing "unrecognized arguments" or broken extraction errors as YouTube updates its backend.
 *   **Bulletproof Process Management**: OS-level thread and subprocess tracking. Closing the app triggers a graceful shutdown, safely terminating active downloads, clearing memory, and preventing ghost processes (`SIGKILL`/`taskkill`).
@@ -40,14 +40,14 @@ https://github.com/yt-dlp/yt-dlp#impersonation
 ### 👑 Release 2.5 (Current)
 
 *   **Updated by Claude Sonnet 4.5.**
-*   Fixed missing `_clear_log()` call in `start_download_manual` — manual downloads no longer append onto stale log output from previous operations.
+*   Fixed missing `_clear_log()` call in `start_download_manual` — manual downloads no longer append to stale log output from previous operations.
 *   Fixed playlist misdetection when `playlist_title` returns an empty string — playlists with no title are now correctly identified and handled instead of being silently treated as single videos.
 *   Fixed TOCTOU race condition in `_clear_log()` — replaced the fragile `.empty()` + `.get_nowait()` pattern with a single atomic drain loop, preventing log lines from silently vanishing under thread contention.
 *   Fixed playlist filename collision risk — downloads without a custom name now use `%(playlist_index)03d_%(title)s` instead of bare `%(title)s`, ensuring videos with identical titles don't overwrite each other.
 
 ### 👑 Release 2.0
 *   **Perfected by Gemini 3.1 Pro Preview.**
-*   Implemented `threading` and `queue` systems to completely eliminate GUI freezing.
+*   Implemented `threading` and `queue` systems to eliminate GUI freezing.
 *   Added native OS-level subprocess killing (`taskkill` / `SIGKILL`) for instantaneous, clean app exits.
 *   Added full Playlist Support (auto-detects, creates subfolders, formats names).
 *   Added GUI one-click native `yt-dlp` update utility.
@@ -56,7 +56,7 @@ https://github.com/yt-dlp/yt-dlp#impersonation
 
 ### 💎 Release 1.0
 *   **Engineered by Gemini 3 Pro Preview.**
-*   Introduced FFmpeg direct pipeline for "Visually Lossless" x264/x265 hardware encoding.
+*   Introduced an FFmpeg direct pipeline for "Visually Lossless" x264/x265 hardware encoding.
 *   Added True Identity verification to secure video titles before downloading.
 *   Added UUID-based temporary file generation to prevent overwrite collisions.
 *   Implemented dynamic FPS extraction for pristine video reconstruction.
@@ -69,7 +69,7 @@ https://github.com/yt-dlp/yt-dlp#impersonation
 *   Improved input stripping and empty-field validations.
 
 ### 🛠️ Beta 6.5
-*   Introduced the ability to manually rename output files prior to downloading.
+*   Introduced the ability to manually rename output files before downloading.
 *   Improved CLI error handling and GUI updates.
 *   Streamlined formatting strings to automatically capture `%(title)s.%(ext)s`.
 
@@ -81,11 +81,11 @@ https://github.com/yt-dlp/yt-dlp#impersonation
 
 ## 🧠 Sources and Professors (AI)
 
-This project is a testament to the power of human curiosity combined with Artificial Intelligence. 
+This project shows the power of human curiosity combined with Artificial Intelligence. 
 
 **AI "Professors" & Code Architects:**
 *   🧠 **Claude Sonnet 4.5**: Eliminated four critical threading, playlist detection, and log-handling bugs. Ensured TOCTOU safety and robust playlist handling for edge cases (Release 2.5).
-*   🌌 **Gemini 3.1 Pro Preview**: Engineered the final, bulletproof multi-threaded architecture, queue-logging, and graceful OS-level process handling (Release 2.0).
+*   🌌 **Gemini 3.1 Pro Preview**: Engineered the final, bulletproof multi-threaded architecture, queue logging, and graceful OS-level process handling (Release 2.0).
 *   🔬 **Gemini 3 Pro Preview**: Introduced advanced FFmpeg encoding pipelines, system reconnaissance, and advanced command list structuring (Release 1.0).
 *   🧠 **Gemini 2.5 Pro**: Provided the first major code cleanup, stripping redundant libraries and establishing solid Python logic (Beta 8.0).
 *   🤖 **ChatGPT-3.5 & ChatGPT-4o**: Assisted with foundational logic, UI sizing, and early debugging (Beta 4.0 - Beta 6.5).
