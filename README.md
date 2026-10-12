@@ -22,8 +22,6 @@ Built with strict attention to stability, usability, and clean architecture:
 
 ## ⚙️ Setup & Installation
 
-Open your Terminal and execute the following:
-
 ```powershell
 winget install DenoLand.Deno
 winget install Gyan.FFmpeg
