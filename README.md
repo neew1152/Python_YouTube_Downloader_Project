@@ -4,9 +4,7 @@
 
 A powerful, modern, and highly resilient YouTube video and playlist downloader built with Python. Evolving from basic scripts to a fully threaded, non-blocking GUI application, this project uses `customtkinter`, `yt-dlp`, and `FFmpeg` to deliver a seamless video-downloading experience. 
 
-## ✨ Features (Perfectionism)
-
-Built with strict attention to stability, usability, and clean architecture:
+## Features
 
 *   **Modern, Responsive UI**: Powered by `customtkinter`, featuring a clean, dark-themed, and intuitive interface that dynamically scales to 50% of your screen resolution.
 *   **100% Non-Blocking Architecture**: Fully multi-threaded background processing. The UI remains buttery-smooth and responsive even during heavy downloads or format extraction.
@@ -20,29 +18,22 @@ Built with strict attention to stability, usability, and clean architecture:
 *   **Real-Time Queue-Based Logging**: A built-in terminal monitor that streams subprocess output directly to the UI in real-time, safely managed via thread queues.
 *   **Deployment Ready**: Directory structures and base-path logic are strictly designed to be 100% compatible with standalone executable compilers like `PyInstaller`.
 
-## ⚙️ Setup & Installation
+## [Installation](https://github.com/yt-dlp/yt-dlp/wiki/Installation)
 
 ```powershell
-winget install DenoLand.Deno
 winget install Gyan.FFmpeg
-winget install OpenJS.NodeJS.LTS
-winget install Python.Python.3.14
-pip install customtkinter yt-dlp
+pip install customtkinter
 pip install -U "yt-dlp[default]"
 ```
 
-https://github.com/yt-dlp/yt-dlp#impersonation
-
-## 🧠 Sources and Professors
-
-This project shows the power of human curiosity combined with Artificial Intelligence. 
+## Sources
 
 **AI "Professors" & Code Architects:**
-*   🧠 **Claude Sonnet 4.5**: Eliminated four critical threading, playlist detection, and log-handling bugs. Ensured TOCTOU safety and robust playlist handling for edge cases (Release 2.5).
-*   🌌 **Gemini 3.1 Pro Preview**: Engineered the final, bulletproof multi-threaded architecture, queue logging, and graceful OS-level process handling (Release 2.0).
-*   🔬 **Gemini 3 Pro Preview**: Introduced advanced FFmpeg encoding pipelines, system reconnaissance, and advanced command list structuring (Release 1.0).
-*   🧠 **Gemini 2.5 Pro**: Provided the first major code cleanup, stripping redundant libraries and establishing solid Python logic (Beta 8.0).
-*   🤖 **ChatGPT-3.5 & ChatGPT-4o**: Assisted with foundational logic, UI sizing, and early debugging (Beta 4.0 - Beta 6.5).
+*  **Claude Sonnet 4.5**: Eliminated four critical threading, playlist detection, and log-handling bugs. Ensured TOCTOU safety and robust playlist handling for edge cases (Release 2.5).
+*  **Gemini 3.1 Pro Preview**: Engineered the final, bulletproof multi-threaded architecture, queue logging, and graceful OS-level process handling (Release 2.0).
+*  **Gemini 3 Pro Preview**: Introduced advanced FFmpeg encoding pipelines, system reconnaissance, and advanced command list structuring (Release 1.0).
+*  **Gemini 2.5 Pro**: Provided the first major code cleanup, stripping redundant libraries and establishing solid Python logic (Beta 8.0).
+*  **ChatGPT-3.5 & ChatGPT-4o**: Assisted with foundational logic, UI sizing, and early debugging (Beta 4.0 - Beta 6.5).
 
 **Community Sources & Inspiration:**
 *   Original syntax logic and CustomTkinter inspiration gathered from various YouTube tutorials, including (but not limited to):
