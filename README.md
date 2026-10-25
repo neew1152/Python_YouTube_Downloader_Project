@@ -8,13 +8,13 @@ The application provides a modern desktop interface for querying available media
 
 ## Features
 
-- **Automated Stream Selection:** Download the optimal video and audio stream combination (`bestvideo+bestaudio/best`) muxed automatically into an MKV container.
-- **Smart Playlist Detection:** Automatically distinguishes between standalone items and playlists, organizing multi-item downloads into dedicated, sanitized subdirectories with index prefixing.
-- **Granular Format Selection:** Inspect all remote stream formats (`-F`) directly in the application log and select explicit Format IDs for targeted extraction.
-- **Authentication & Cookie Injection:** Supports Netscape/JSON format cookie files via a native file picker or browser-level cookie extraction (e.g., `chrome`, `firefox`, `edge`).
-- **Real-Time Terminal Emulation:** Thread-safe, non-blocking standard output (stdout/stderr) streaming with automatic line truncation to prevent memory exhaustion during long operations.
-- **Robust Process Isolation:** Safe process termination and cancellation handlers using platform-specific process groups (`taskkill` on Windows, `killpg` on POSIX systems).
-- **In-App Dependency Updates:** Update the bundled or system `yt-dlp` executable directly from the GUI.
+- **Stream Selection:** Download the optimal video and audio stream combination (`bestvideo+bestaudio/best`) muxed automatically into an MKV container.
+- **Playlist Detection:** Automatically distinguishes between standalone items and playlists, organizing multi-item downloads into dedicated, sanitized subdirectories with index prefixing.
+- **Format Selection:** Inspect all remote stream formats (`-F`) directly in the application log and select explicit Format IDs for targeted extraction.
+- **Cookie Injection:** Supports Netscape/JSON format cookie files via a native file picker or browser-level cookie extraction (e.g., `chrome`, `firefox`, `edge`).
+- **Terminal Emulation:** Thread-safe, non-blocking standard output (stdout/stderr) streaming with automatic line truncation to prevent memory exhaustion during long operations.
+- **Process Isolation:** Safe process termination and cancellation handlers using platform-specific process groups (`taskkill` on Windows, `killpg` on POSIX systems).
+- **Dependency Updates:** Update the bundled or system `yt-dlp` executable directly from the GUI.
 
 ## Prerequisites
 
