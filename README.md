@@ -2,29 +2,40 @@
 
 ![Preview.png](./Preview.png)
 
-A powerful, modern, and highly resilient media video and playlist downloader built with Python. Evolving from basic scripts to a fully threaded, non-blocking GUI application, this project uses `customtkinter`, `yt-dlp`, and `FFmpeg` to deliver a seamless video-downloading experience. 
+A lightweight, asynchronous, cross-platform graphical user interface (GUI) front-end for [`yt-dlp`](https://github.com/yt-dlp/yt-dlp), built with Python and [`CustomTkinter`](https://github.com/TomSchimansky/CustomTkinter).
+
+The application provides a modern desktop interface for querying available media streams, downloading single videos and full playlists, injecting authentication cookies, and muxing high-resolution video and audio feeds into Matroska (`.mkv`) containers.
 
 ## Features
 
-- **Modern, Responsive UI**: Powered by `customtkinter`, featuring a clean, dark-themed, and intuitive interface that dynamically scales to 50% of your screen resolution.
-- **100% Non-Blocking Architecture**: Fully multi-threaded background processing. The UI remains buttery-smooth and responsive even during heavy downloads or format extraction.
-- **Smart URL Analysis**: Automatically detects whether a URL is a single video or a playlist. 
-- **Advanced Playlist Handling**: Automatically generates dedicated folders for playlists and sequences' filenames seamlessly.
-- **Format Reconnaissance**: Lists all available video/audio formats for a given URL and manually downloads specific format IDs (e.g., `137+140`).
-- **Automated Quality Merging**: Fetches the absolute best video and best audio streams independently and merges them natively into a high-quality `.mkv` container using FFmpeg.
-- **One-Click `yt-dlp` Updater**: Built-in update button to seamlessly upgrade `yt-dlp` via native commands or Pip, preventing "unrecognized arguments" or broken extraction errors as media updates its backend.
-- **Bulletproof Process Management**: OS-level thread and subprocess tracking. Closing the app triggers a graceful shutdown, safely terminating active downloads, clearing memory, and preventing ghost processes (`SIGKILL`/`taskkill`).
-- **Sanitized Filesystem Operations**: Intelligent filename sanitization removes illegal characters, preventing OS-level saving errors.
-- **Real-Time Queue-Based Logging**: A built-in terminal monitor that streams subprocess output directly to the UI in real-time, safely managed via thread queues.
-- **Deployment Ready**: Directory structures and base-path logic are strictly designed to be 100% compatible with standalone executable compilers like `PyInstaller`.
+- **Automated Stream Selection:** Download the optimal video and audio stream combination (`bestvideo+bestaudio/best`) muxed automatically into an MKV container.
+- **Smart Playlist Detection:** Automatically distinguishes between standalone items and playlists, organizing multi-item downloads into dedicated, sanitized subdirectories with index prefixing.
+- **Granular Format Selection:** Inspect all remote stream formats (`-F`) directly in the application log and select explicit Format IDs for targeted extraction.
+- **Authentication & Cookie Injection:** Supports Netscape/JSON format cookie files via a native file picker or browser-level cookie extraction (e.g., `chrome`, `firefox`, `edge`).
+- **Real-Time Terminal Emulation:** Thread-safe, non-blocking standard output (stdout/stderr) streaming with automatic line truncation to prevent memory exhaustion during long operations.
+- **Robust Process Isolation:** Safe process termination and cancellation handlers using platform-specific process groups (`taskkill` on Windows, `killpg` on POSIX systems).
+- **In-App Dependency Updates:** Update the bundled or system `yt-dlp` executable directly from the GUI.
 
-## [Installation](https://github.com/yt-dlp/yt-dlp/wiki/Installation)
+## Prerequisites
 
 ```powershell
 winget install DenoLand.Deno Gyan.FFmpeg Python.Python.3.12
 pip install customtkinter
 pip install -U "yt-dlp[default]"
 ```
+
+## Usage
+
+| Element | Description |
+| :--- | :--- |
+| **URL Field** | The target media or playlist URL. |
+| **Update** | Executes `yt-dlp -U` (or upgrades via `pip`) to ensure extractor extractors are up to date. |
+| **Download Best** | Evaluates the URL. If a playlist is detected, it downloads the playlist into a dedicated folder. If a single item is detected, it downloads the best combined streams to the `Downloads/` directory. |
+| **Output name (optional)** | Specify a custom filename. Special characters are automatically sanitized. For playlists, this overrides the subfolder name. |
+| **Formats** | Queries the URL and outputs all available stream IDs, resolutions, codecs, and bitrates to the log console. |
+| **Format ID Field** | Input the specific format code(s) (e.g., `137+140` or `22`) desired for manual download. |
+| **Download** | Downloads the specified **Format ID** for the current URL. |
+| **Cookies** | Path to a Netscape cookie `.txt` file, or the plain-text name of a supported browser (e.g., `chrome`, `firefox`, `brave`, `edge`). Click `…` to open a file browser. |
 
 ## Sources
 - **Claude Sonnet 4.5**: Eliminated four critical threading, playlist detection, and log-handling bugs. Ensured TOCTOU safety and robust playlist handling for edge cases (2.5).
@@ -44,3 +55,7 @@ pip install -U "yt-dlp[default]"
 - https://github.com/yt-dlp/yt-dlp
 - https://github.com/TomSchimansky/CustomTkinter
 - https://www.google.com
+
+## Disclaimer
+
+This software is an open-source graphical frontend designed for legitimate media management and backup purposes. Users are responsible for complying with the terms of service of any host platform and all applicable local, national, and international copyright laws. The developers assume no liability for misuse of this software.
