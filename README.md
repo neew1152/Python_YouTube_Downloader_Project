@@ -1,4 +1,4 @@
-# 🐍 Python YouTube Downloader
+# Python YouTube Downloader Project
 
 ![Software-Preview.png](https://github.com/user-attachments/assets/e2eb6ea0-94d4-4570-a106-b35088763e6f)
 
