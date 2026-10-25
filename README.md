@@ -24,20 +24,8 @@ pip install customtkinter
 pip install -U "yt-dlp[default]"
 ```
 
-## Usage
-
-| Element | Description |
-| :--- | :--- |
-| **URL Field** | The target media or playlist URL. |
-| **Update** | Executes `yt-dlp -U` (or upgrades via `pip`) to ensure extractors are up to date. |
-| **Download Best** | Evaluates the URL. If a playlist is detected, it downloads the playlist into a dedicated folder. If a single item is detected, it downloads the best combined streams to the `Downloads/` directory. |
-| **Output name (optional)** | Specify a custom filename. Special characters are automatically sanitized. For playlists, this overrides the subfolder name. |
-| **Formats** | Queries the URL and outputs all available stream IDs, resolutions, codecs, and bitrates to the log console. |
-| **Format ID Field** | Input the specific format code(s) (e.g., `137+140` or `22`) desired for manual download. |
-| **Download** | Downloads the specified **Format ID** for the current URL. |
-| **Cookies** | Path to a Netscape cookie `.txt` file, or the plain-text name of a supported browser (e.g., `chrome`, `firefox`, `brave`, `edge`). Click `…` to open a file browser. |
-
 ## Sources
+
 - **Claude Sonnet 4.5**: Eliminated four critical threading, playlist detection, and log-handling bugs. Ensured TOCTOU safety and robust playlist handling for edge cases (2.5).
 - **Gemini 3.1 Pro Preview**: Engineered the final, bulletproof multi-threaded architecture, queue logging, and graceful OS-level process handling (2.0).
 - **Gemini 3 Pro Preview**: Introduced advanced FFmpeg encoding pipelines, system reconnaissance, and advanced command list structuring (1.0).
