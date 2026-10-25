@@ -21,7 +21,7 @@ class App(ctk.CTk):
         self._lock = threading.Lock()
         self._proc: Optional[subprocess.Popen] = None
         self._q: queue.Queue[str] = queue.Queue()
-        self.title('Python YouTube Downloader 4.5')
+        self.title('Python Media Downloader 4.5')
         self.geometry(f'{self.winfo_screenwidth()//2}x{self.winfo_screenheight()//2}')
         self.protocol('WM_DELETE_WINDOW', self._quit)
         base = os.path.dirname(sys.executable) if getattr(sys, 'frozen', False) else os.path.dirname(os.path.abspath(__file__))

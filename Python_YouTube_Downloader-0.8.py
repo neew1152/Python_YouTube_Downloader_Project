@@ -9,7 +9,7 @@ import tkinter
 
 # --- 2. Create the main application window ---
 app = customtkinter.CTk()
-app.title("Python YouTube Downloader 0.8")
+app.title("Python Media Downloader 0.8")
 
 # --- 3. Set the window size ---
 # Get the user's screen dimensions.

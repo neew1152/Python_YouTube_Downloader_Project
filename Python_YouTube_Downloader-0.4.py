@@ -17,7 +17,7 @@ from tkinter import ttk
 
 # Our app frame
 app = customtkinter.CTk()
-app.title("Python YouTube Downloader 0.4")
+app.title("Python Media Downloader 0.4")
 
 # Get the default font of the operating system
 os_font = customtkinter.CTkFont()

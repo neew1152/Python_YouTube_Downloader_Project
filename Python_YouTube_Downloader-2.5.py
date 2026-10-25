@@ -11,7 +11,7 @@ from typing import Optional, List, Tuple
 import customtkinter
 
 
-class YouTubeDownloaderApp(customtkinter.CTk):
+class MediaDownloaderApp(customtkinter.CTk):
     def __init__(self):
         super().__init__()
         
@@ -22,7 +22,7 @@ class YouTubeDownloaderApp(customtkinter.CTk):
         self.log_queue = queue.Queue()
         
         # Window Setup
-        self.title("Python YouTube Downloader 2.5")
+        self.title("Python Media Downloader 2.5")
         screen_width = self.winfo_screenwidth()
         screen_height = self.winfo_screenheight()
         self.geometry(f"{int(screen_width * 0.50)}x{int(screen_height * 0.50)}")
@@ -419,5 +419,5 @@ class YouTubeDownloaderApp(customtkinter.CTk):
 
 
 if __name__ == "__main__":
-    app = YouTubeDownloaderApp()
+    app = MediaDownloaderApp()
     app.mainloop()

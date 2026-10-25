@@ -22,7 +22,7 @@ class App(ctk.CTk):
         self._lock = threading.Lock()
         self._proc: Optional[subprocess.Popen] = None
         self._q: queue.Queue[str] = queue.Queue()
-        self.title('Python YouTube Downloader 4.0')
+        self.title('Python Media Downloader 4.0')
         sw, sh = self.winfo_screenwidth(), self.winfo_screenheight()
         self.geometry(f'{sw//2}x{sh//2}')
         self.protocol('WM_DELETE_WINDOW', self._quit)

@@ -1,8 +1,8 @@
-# Python YouTube Downloader
+# Python Media Downloader
 
 ![Software-Preview.png](https://github.com/user-attachments/assets/e2eb6ea0-94d4-4570-a106-b35088763e6f)
 
-A powerful, modern, and highly resilient YouTube video and playlist downloader built with Python. Evolving from basic scripts to a fully threaded, non-blocking GUI application, this project uses `customtkinter`, `yt-dlp`, and `FFmpeg` to deliver a seamless video-downloading experience. 
+A powerful, modern, and highly resilient media video and playlist downloader built with Python. Evolving from basic scripts to a fully threaded, non-blocking GUI application, this project uses `customtkinter`, `yt-dlp`, and `FFmpeg` to deliver a seamless video-downloading experience. 
 
 ## Features
 
@@ -12,7 +12,7 @@ A powerful, modern, and highly resilient YouTube video and playlist downloader b
 - **Advanced Playlist Handling**: Automatically generates dedicated folders for playlists and sequences' filenames seamlessly.
 - **Format Reconnaissance**: Lists all available video/audio formats for a given URL and manually downloads specific format IDs (e.g., `137+140`).
 - **Automated Quality Merging**: Fetches the absolute best video and best audio streams independently and merges them natively into a high-quality `.mkv` container using FFmpeg.
-- **One-Click `yt-dlp` Updater**: Built-in update button to seamlessly upgrade `yt-dlp` via native commands or Pip, preventing "unrecognized arguments" or broken extraction errors as YouTube updates its backend.
+- **One-Click `yt-dlp` Updater**: Built-in update button to seamlessly upgrade `yt-dlp` via native commands or Pip, preventing "unrecognized arguments" or broken extraction errors as media updates its backend.
 - **Bulletproof Process Management**: OS-level thread and subprocess tracking. Closing the app triggers a graceful shutdown, safely terminating active downloads, clearing memory, and preventing ghost processes (`SIGKILL`/`taskkill`).
 - **Sanitized Filesystem Operations**: Intelligent filename sanitization removes illegal characters, preventing OS-level saving errors.
 - **Real-Time Queue-Based Logging**: A built-in terminal monitor that streams subprocess output directly to the UI in real-time, safely managed via thread queues.

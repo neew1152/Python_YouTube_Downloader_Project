@@ -28,7 +28,7 @@ _YTDLP_BASE = ('yt-dlp', '--newline', '--no-cache-dir', '--no-check-certificate'
 _YTDLP_FMT_FFMPEG = ('-f', 'bestvideo+bestaudio/best', '--merge-output-format', 'mkv')
 _YTDLP_FMT_NOFFMPEG = ('-f', 'best')
 
-class YouTubeDownloaderApp(ctk.CTk):
+class MediaDownloaderApp(ctk.CTk):
 
     def __init__(self) -> None:
         super().__init__()
@@ -36,7 +36,7 @@ class YouTubeDownloaderApp(ctk.CTk):
         self.process_lock = threading.Lock()
         self.current_process: Optional[subprocess.Popen] = None
         self.log_queue: queue.Queue[str] = queue.Queue()
-        self.title('Python YouTube Downloader 3.0')
+        self.title('Python Media Downloader 3.0')
         sw, sh = (self.winfo_screenwidth(), self.winfo_screenheight())
         self.geometry(f'{sw // 2}x{sh // 2}')
         self.protocol('WM_DELETE_WINDOW', self._on_closing)
@@ -335,5 +335,5 @@ class YouTubeDownloaderApp(ctk.CTk):
         finally:
             os._exit(0)
 if __name__ == '__main__':
-    app = YouTubeDownloaderApp()
+    app = MediaDownloaderApp()
     app.mainloop()
