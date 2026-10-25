@@ -38,7 +38,7 @@ class YouTubeDownloaderApp(ctk.CTk):
         self.process_lock = threading.Lock()
         self.current_process: Optional[subprocess.Popen] = None
         self.log_queue: queue.Queue[str] = queue.Queue()
-        self.title('Python Youtube Downloader 3.5')
+        self.title('Python YouTube Downloader 3.5')
         sw, sh = (self.winfo_screenwidth(), self.winfo_screenheight())
         self.geometry(f'{sw // 2}x{sh // 2}')
         self.protocol('WM_DELETE_WINDOW', self._on_closing)

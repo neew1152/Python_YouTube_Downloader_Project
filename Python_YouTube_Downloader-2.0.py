@@ -22,7 +22,7 @@ class YouTubeDownloaderApp(customtkinter.CTk):
         self.log_queue = queue.Queue()
         
         # Window Setup
-        self.title("Python Youtube Downloader 2.5")
+        self.title("Python YouTube Downloader 2.0")
         screen_width = self.winfo_screenwidth()
         screen_height = self.winfo_screenheight()
         self.geometry(f"{int(screen_width * 0.50)}x{int(screen_height * 0.50)}")
@@ -135,11 +135,13 @@ class YouTubeDownloaderApp(customtkinter.CTk):
     def _clear_log(self):
         if self.shutdown_event.is_set():
             return
-        try:
-            while True:
+            
+        while not self.log_queue.empty():
+            try:
                 self.log_queue.get_nowait()
-        except queue.Empty:
-            pass
+            except queue.Empty:
+                break
+                
         self.monitor_frame.configure(state="normal")
         self.monitor_frame.delete("1.0", "end")
         self.monitor_frame.configure(state="disabled")
@@ -294,7 +296,6 @@ class YouTubeDownloaderApp(customtkinter.CTk):
 
     def start_download_manual(self):
         url, filename, video_id = self._get_inputs()
-        self._clear_log()
         self._set_gui_state("disabled")
         threading.Thread(target=self._download_manual_thread, args=(url, video_id, filename), daemon=True).start()
 
@@ -383,7 +384,7 @@ class YouTubeDownloaderApp(customtkinter.CTk):
             if raw_title is None or self.shutdown_event.is_set(): 
                 return
 
-            is_playlist = bool(raw_title) and raw_title.strip() != "NA"
+            is_playlist = (raw_title != "NA" and bool(raw_title))
             clean_custom_name = self._sanitize_filename(custom_filename)
 
             # Fallback to standard 'best' if ffmpeg is missing to prevent unmerged audio/video split files
@@ -398,7 +399,7 @@ class YouTubeDownloaderApp(customtkinter.CTk):
                     pl_title = f"Playlist_{uuid.uuid4().hex[:8]}"
                     
                 self.log(f"Target Folder: {pl_title}\n")
-                name_template = f"{clean_custom_name}_%(autonumber)03d.%(ext)s" if clean_custom_name else "%(playlist_index)03d_%(title)s.%(ext)s"
+                name_template = f"{clean_custom_name}_%(autonumber)03d.%(ext)s" if clean_custom_name else "%(title)s.%(ext)s"
                 output_template = os.path.join(self.download_dir, pl_title, name_template)
                 
                 command = base_cmd + ["--yes-playlist", "-o", output_template, "--", url]
