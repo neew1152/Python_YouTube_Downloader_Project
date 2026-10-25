@@ -29,7 +29,7 @@ pip install -U "yt-dlp[default]"
 | Element | Description |
 | :--- | :--- |
 | **URL Field** | The target media or playlist URL. |
-| **Update** | Executes `yt-dlp -U` (or upgrades via `pip`) to ensure extractor extractors are up to date. |
+| **Update** | Executes `yt-dlp -U` (or upgrades via `pip`) to ensure extractors are up to date. |
 | **Download Best** | Evaluates the URL. If a playlist is detected, it downloads the playlist into a dedicated folder. If a single item is detected, it downloads the best combined streams to the `Downloads/` directory. |
 | **Output name (optional)** | Specify a custom filename. Special characters are automatically sanitized. For playlists, this overrides the subfolder name. |
 | **Formats** | Queries the URL and outputs all available stream IDs, resolutions, codecs, and bitrates to the log console. |
