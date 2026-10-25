@@ -17,7 +17,7 @@ from tkinter import ttk
 
 # Our app frame
 app = customtkinter.CTk()
-app.title("Python YouTube Video Downloader Beta 6.5 Project")
+app.title("Python YouTube Video Downloader 0.4")
 
 # Get the default font of the operating system
 os_font = customtkinter.CTkFont()
@@ -61,6 +61,7 @@ change_appearance_mode_switch = customtkinter.CTkSwitch(app, text="Change Appear
 change_appearance_mode_switch.pack(anchor="nw", padx=10, pady=0)
 app.update()
 
+# Video and Audio Tab
 # Scrollable frame
 video_and_audio_scroll_frame = customtkinter.CTkScrollableFrame(app)
 video_and_audio_scroll_frame.pack(fill=customtkinter.BOTH, expand=True)
@@ -78,6 +79,9 @@ def search_format_function(url):
     try:
         # Clear any existing content in the frame
         monitor_command_output_frame.delete('1.0', tkinter.END)
+        app.update()
+
+        # Update the graphical user interface to show the message
         app.update()
         
         # Open subprocess to run the command
@@ -159,7 +163,6 @@ app.update()
 
 # Variable to keep track of the auto-scroll state
 auto_scroll_enabled = tkinter.BooleanVar(value="on")
-app.update()
 
 # Auto-Scroll Switch
 def toggle_auto_scroll():
@@ -180,23 +183,16 @@ ID_input = customtkinter.CTkEntry(video_and_audio_scroll_frame, placeholder_text
 ID_input.pack(fill=customtkinter.BOTH, expand=True, padx=0, pady=6)
 app.update()
 
-# Rename file input
-name_file_input = customtkinter.CTkEntry(video_and_audio_scroll_frame, placeholder_text="Empty = Original Titles", font=(os_font, os_font_size), height=40)
-name_file_input.pack(fill=customtkinter.BOTH, expand=True, padx=0, pady=0)
-app.update()
-
 # Download Command Button
 # Download function
-def download_function(url, ID, name_file):
-    # Check if name_file_input is empty and include placeholders for the title and extension in the output template
-    if name_file.strip() == "":
-        command = f"yt-dlp -f {ID} {url} -o Downloads/%(title)s.%(ext)s"
-    else:
-        command = f"yt-dlp -f {ID} {url} -o Downloads/{name_file}.%(ext)s"
-
+def download_function(url, ID):
+    # Include placeholders for the title and extension in the output template
+    command = f"yt-dlp -f {ID} {url} -o Downloads/%(title)s.%(ext)s"
     try:
         # Clear any existing content in the frame
         monitor_command_output_frame.delete('1.0', tkinter.END)
+        
+        # Update the GUI to show the message
         app.update()
 
         # Open subprocess to run the command
@@ -206,9 +202,6 @@ def download_function(url, ID, name_file):
         # Read output line by line and insert it into the frame
         for line in process.stdout:
             monitor_command_output_frame.insert(tkinter.END, line)
-            app.update()
-            
-            download_button.configure()
             app.update()
 
             # Auto-scroll if enabled
@@ -220,9 +213,6 @@ def download_function(url, ID, name_file):
         errors_output = process.communicate()[1]
         if errors_output:
             monitor_command_output_frame.insert(tkinter.END, errors_output)
-            app.update()
-            
-            download_button.configure()
             app.update()
             
             # Auto-scroll if enabled
@@ -245,11 +235,9 @@ app.update()
 def download():
     url = url_input.get()
     ID = ID_input.get()
-    name_file = name_file_input.get()
-    download_function(url, ID, name_file)
-
+    download_function(url, ID)
 download_button = customtkinter.CTkButton(video_and_audio_scroll_frame, text="Download", font=(os_font, os_font_size), fg_color="#297CD2", hover_color="#21A366", height=20, command=download)
-download_button.pack(padx=0, pady=6)
+download_button.pack()
 app.update()
 
 # Progress Bar (hide)
@@ -262,7 +250,7 @@ progress_label = customtkinter.CTkLabel(app, text="0%")
 # Status label (hide)
 status_label = customtkinter.CTkLabel(app, text="")
 
-# Update the graphical user interface and Run app
+# Update GUI and Run app
 app.update()
 app.mainloop()
 
@@ -278,4 +266,3 @@ app.mainloop()
 # Some videos have been deleted.
 
 # ChatGPT 3.5, ChatGPT-4o, GitHub and Google.
-

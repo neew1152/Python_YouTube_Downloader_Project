@@ -29,14 +29,13 @@ pip install -U "yt-dlp[default]"
 ## Sources
 
 **AI "Professors" & Code Architects:**
-*  **Claude Sonnet 4.5**: Eliminated four critical threading, playlist detection, and log-handling bugs. Ensured TOCTOU safety and robust playlist handling for edge cases (Release 2.5).
-*  **Gemini 3.1 Pro Preview**: Engineered the final, bulletproof multi-threaded architecture, queue logging, and graceful OS-level process handling (Release 2.0).
-*  **Gemini 3 Pro Preview**: Introduced advanced FFmpeg encoding pipelines, system reconnaissance, and advanced command list structuring (Release 1.0).
-*  **Gemini 2.5 Pro**: Provided the first major code cleanup, stripping redundant libraries and establishing solid Python logic (Beta 8.0).
-*  **ChatGPT-3.5 & ChatGPT-4o**: Assisted with foundational logic, UI sizing, and early debugging (Beta 4.0 - Beta 6.5).
+*  **Claude Sonnet 4.5**: Eliminated four critical threading, playlist detection, and log-handling bugs. Ensured TOCTOU safety and robust playlist handling for edge cases (2.5).
+*  **Gemini 3.1 Pro Preview**: Engineered the final, bulletproof multi-threaded architecture, queue logging, and graceful OS-level process handling (2.0).
+*  **Gemini 3 Pro Preview**: Introduced advanced FFmpeg encoding pipelines, system reconnaissance, and advanced command list structuring (1.0).
+*  **Gemini 2.5 Pro**: Provided the first major code cleanup, stripping redundant libraries and establishing solid Python logic (0.8).
+*  **ChatGPT-3.5 & ChatGPT-4o**: Assisted with foundational logic, UI sizing, and early debugging (0.4 - 0.6).
 
 **Community Sources & Inspiration:**
-*   Original syntax logic and CustomTkinter inspiration gathered from various YouTube tutorials, including (but not limited to):
     *   * https://www.youtube.com/watch?v=NI9LXzo0UY0
     *   * https://www.youtube.com/watch?v=Miydkti_QVE
     *   * https://www.youtube.com/watch?v=Envp9yHb2Ho

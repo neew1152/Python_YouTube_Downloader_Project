@@ -11,7 +11,7 @@ import uuid
 
 # --- 2. Create the main application window ---
 app = customtkinter.CTk()
-app.title("Python Youtube Downloader Release 1.0 Project")
+app.title("Python Youtube Downloader 1.0")
 
 # --- 3. Set the window size ---
 screen_width = app.winfo_screenwidth()
