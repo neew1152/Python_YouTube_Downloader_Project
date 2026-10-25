@@ -1,6 +1,6 @@
 # Python Media Downloader
 
-![Software-Preview.png](https://github.com/user-attachments/assets/e2eb6ea0-94d4-4570-a106-b35088763e6f)
+![Preview.png](./Preview.png)
 
 A powerful, modern, and highly resilient media video and playlist downloader built with Python. Evolving from basic scripts to a fully threaded, non-blocking GUI application, this project uses `customtkinter`, `yt-dlp`, and `FFmpeg` to deliver a seamless video-downloading experience. 
 
