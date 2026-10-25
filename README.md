@@ -21,7 +21,7 @@ A powerful, modern, and highly resilient YouTube video and playlist downloader b
 ## [Installation](https://github.com/yt-dlp/yt-dlp/wiki/Installation)
 
 ```powershell
-winget install Gyan.FFmpeg
+winget install DenoLand.Deno Gyan.FFmpeg Python.Python.3.12
 pip install customtkinter
 pip install -U "yt-dlp[default]"
 ```
